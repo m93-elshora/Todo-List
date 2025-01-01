@@ -1,0 +1,125 @@
+:root {
+    --main-color: #9361f5;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: "Exo 2", serif;
+}
+
+.add-task {
+    background-color: var(--main-color);
+    padding: 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 5px #9261f574;
+
+}
+
+.task-container .icon {
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.task-container .task-name {
+    cursor: pointer;
+    position: relative;
+}
+
+.task-container .task-name::after {
+    content: "click to completd";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 8px;
+    text-wrap: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.task-container .task-name:hover:after {
+    opacity: 1;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
+  }
+  .loader::after {
+    animation-delay: 1s;
+  }
+  
+  @keyframes animloader {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    
+}
+#progressBar {
+    height: 10px;
+    background-color: #c2b1e65b;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+#progressBar #progress {
+    height: inherit;
+    background-color:#7132ee ;
+    width: 0% ;
+    transition: width 0.7s ;
+
+}
+.status-number {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px; 
+}
